@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/zTreeStyle.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/markdown.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/new.css"}}" />
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} nav-closed">
+    <div class="nav-new">
+    
+        <!--logo start-->
+        <div class="h_logo" style="float:right">
+          <button id="button">目录</button>
+         
+        </div>
+        <!--logo end-->
+        <!-- <div class="h_link">
+            <a href="http://172.30.23.62:2368/" class="nav-home selected" role="presentation">Home</a>
+            <a href="http://172.30.23.62:2368/fen-xiang/" class="nav-" role="presentation">分享</a>
+        </div> -->
+        <!--
+        <a class="subscribe-button icon-feed" href="/rss/">订阅</a>
+
+        -->
+    </div>
+    {{navigation}}
+    <div class="site-wrapper">
+
+        {{! Everything else gets inserted here }}
+        {{{body}}}
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; <a href="http://www.ghostchina.com">GhostChina</a></section>
+        </footer>
+
+    </div>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Salcabar }}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+    <script >hljs.initHighlightingOnLoad();</script>  
+    
+    {{#is 'post'}}
+    <script type="text/javascript" src="{{asset "js/ztree.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.ztree.core-3.5.js"}}"></script>
+        <script>
+            $(document).ready(function(){
+                $('#tree').ztree_toc({
+                    is_auto_number: true,
+                    // documment_selector: '.first_part'
+                });
+
+            });
+        </script>
+    {{/is}}
+</body>
+</html>

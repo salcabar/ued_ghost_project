@@ -1,0 +1,24 @@
+<!--菜单 start--> 
+<div class="nav-new">
+    
+    <!--logo start-->
+    <div class="h_logo">
+      <a href="http://localhost:2368/">
+           凤凰UED
+      </a>
+     
+    </div>
+    <!--logo end-->
+    <div class="h_link">
+        {{#foreach navigation}}
+        <a href='{{url absolute="true"}}' class="nav-{{slug}}{{#if current}} selected{{/if}}" role="presentation">{{label}}</a>
+        {{/foreach}}
+    </div>
+    <!--
+    <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">订阅</a>
+
+    -->
+</div>
+<span class="nav-cover"></span>
+
+<!--菜单 end-->

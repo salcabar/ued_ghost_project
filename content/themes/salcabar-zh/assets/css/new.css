@@ -1,0 +1,129 @@
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot'); /* IE9*/
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.nav-new{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    line-height: 60px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+.nav-new .h_logo{
+    position: relative;
+    float: left;
+    width: 300px;
+    left: 30px;
+}
+
+.nav{
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    z-index: 100;
+    visibility: hidden;
+    width: 300px;
+    height: 100%;
+    background: #48a770;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+
+    visibility: visible;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.menu-open.nav {
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.nav .nav-title{
+    color: #000;
+    opacity: 0.4;
+    font-size: 2em;
+    padding: 1em 1em 1em 110px;
+    margin: 0;
+    font-weight: 300;
+    text-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+
+.nav .nav-home:before { 
+    content: "\e601"; 
+}
+
+.nav .nav-share:before { 
+    content: "\e602"; 
+}
+
+.nav .nav-fpm:before { 
+    content: "\e603"; 
+}
+
+.nav .nav-api:before { 
+    content: "\e60a"; 
+}
+
+.nav .nav-team:before { 
+    content: "\e609"; 
+}
+
+.nav ul,li {
+    list-style-type: none;
+    line-height: 30px;
+    margin:0;
+}
+
+.nav ul li:first-child a{
+    box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
+}
+.nav li a{
+    text-decoration: none;
+    display: block;
+    padding: 1em 1em 1em 1.2em;
+    outline: none;
+    box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+    color: #f3efe0;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px rgba(255,255,255,0.1);
+    letter-spacing: 1px;
+    font-weight: 400;
+    -webkit-transition: background 0.3s, box-shadow 0.3s;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.nav li a:hover{
+    background: rgba(0,0,0,0.2);
+    box-shadow: inset 0 -1px rgba(0,0,0,0);
+    color: #fff;
+}
+
+.icon:before{
+    font-family: 'iconfont';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 0.8em;
+    font-size: 1.9em;
+    -webkit-font-smoothing: antialiased;
+};

@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        
+        
+        <script src="http://y0.ifengimg.com/fe/f_map_project/scripts/base-core_e252cce7.min.js"></script>
+        
+        
+
+        
+        
+        <link rel="stylesheet" href="http://y0.ifengimg.com/fe/f_map_project/styles/f_map_project_depmodules_89541591.min.css">
+        
+        
+
+        
+
+        
+
+        
+
+        
+        <link rel="stylesheet" href="http://y0.ifengimg.com/fe/f_map_project/styles/f_map_project_main_a2e59cb9.min.css">
+        
+        
+
+        
+
+        
+
+        
+    </head>
+    <body>
+
+        
+        
+        
+        <script>
+           requirejs.config({
+             paths:{
+              "jquery#1.8.1" : "http://y1.ifengimg.com/fe/jQuery/jquery-1.8.1.min",
+              "artTemplate#3.0.3" : "http://y0.ifengimg.com/fe/f_map_project/scripts/f_map_project_depmodules_2e9749c6.min",
+              "f_map_util#0.0.3" : "http://y0.ifengimg.com/fe/f_map_project/scripts/f_map_project_depmodules_2e9749c6.min",
+              "f_map#0.0.3" : "http://y0.ifengimg.com/fe/f_map_project/scripts/f_map_project_depmodules_2e9749c6.min",
+              "async": "http://y2.ifengimg.com/a/2015/0311/7099f9487fc6f75",
+              "Bmap": "http://y2.ifengimg.com/a/2015/0311/1c432b3f443c1be",
+              "BMapLib": "http://y2.ifengimg.com/a/2015/0311/7633b34da9c0b13"
+        
+             },
+             waitSeconds: 20,shim: {}});
+        </script>
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        <script src="http://y0.ifengimg.com/fe/f_map_project/scripts/f_map_project_main_e80004fb.min.js"></script>
+        
+        
+        
+        
+
+        
+
+        
+
+        
+        <div id="map_util"></div>
+        <div id="map_container" class="container"></div>
+
+
+        <!-- 以标签方式注册一个组件 -->
+        <!--
+        <div g-cid="widgetId" g-cname="f_map_project" g-depId="" g-priority="1" g-option"{'model.propertyName': '@@outModel.propertyName'}"></div>
+        -->
+        <script>
+            // 以命令行方式注册一个组件
+            // glue.widgetRegist('srcNode', 'widgetId', 'f_map_project', 'depWidgetId', 'priority', {
+            //   'model.propertyName': '@@outModel.propertyName'
+            // });
+            var option = {
+                'getPointPosition':true,
+                'getPointDistance':true
+            } 
+
+            // 直接创建一个组件
+            require(['f_map_util#0.0.3'], function(f_map_util) {
+              new f_map_util(glue).create($('#map_util'), '');
+            });
+
+            require(['f_map#0.0.3'], function(f_map) {
+              new f_map(glue).create('map_container', option);
+            });
+
+            // 扫描组件
+            // glue.scan();
+            // 运行组件
+            // glue.run();
+        </script>
+
+    </body>
+</html>

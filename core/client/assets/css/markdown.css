@@ -1,0 +1,196 @@
+/*http://kevinburke.bitbucket.org/markdowncss/markdown.css*/
+
+.wrapper h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+.wrapper h1, h2, h3, h4, h5, p {
+    margin: 24px 0px;
+    padding: 0;
+}
+.wrapper h1 {
+    font-size: 48px;
+}
+.wrapper h2 {
+    font-size: 36px;
+    /* The bottom margin is small. It's designed to be used with gray meta text
+     * below a post title. */
+}
+.wrapper h3 {
+    font-size: 24px;
+}
+.wrapper h4 {
+    font-size: 21px;
+}
+.wrapper h5 {
+    font-size: 18px;
+}
+.wrapper a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+.wrapper a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+.wrapper a:visited {
+    color: purple;
+}
+.wrapper ul, ol {
+    padding: 0;
+    margin: 0;
+}
+.wrapper li {
+    line-height: 24px;
+}
+.wrapper li ul, li ul {
+    margin-left: 24px;
+}
+.wrapper p, ul, ol {
+    font-size: 16px;
+    line-height: 24px;
+}
+.wrapper pre {
+    padding: 0px 0px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+.wrapper code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+.wrapper aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+.wrapper blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+}
+.wrapper blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+.wrapper blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+.wrapper blockquote p {  
+    color: #666;
+}
+.wrapper hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+/* Code below this line is copyright Twitter Inc. */
+
+.wrapper button,
+.wrapper input,
+.wrapper select,
+.wrapper textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+.wrapper button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+.wrapper button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.wrapper button,
+.wrapper input[type="button"],
+.wrapper input[type="reset"],
+.wrapper input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+.wrapper input[type=checkbox], .input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+.wrapper input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.wrapper input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.wrapper input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.wrapper label,
+.wrapper input,
+.wrapper select,
+.wrapper textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+.wrapper input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.wrapper input[type=text],
+.wrapper input[type=password],
+.wrapper textarea,
+.wrapper select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.wrapper select,.wrapper input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+.wrapper textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.wrapper input[type=text],
+.wrapper input[type=password],
+.wrapper select,
+.wrapper textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}_凤凰网UED</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+     <link rel="stylesheet" type="text/css" href="{{asset "css/add.css"}}" />
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} ">
+
+    {{navigation}}
+    <div class="site-wrapper">
+
+        {{! Everything else gets inserted here }}
+        <!--body begin-->
+        {{{body}}}
+        <!--body end-->
+    </div>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot jquery=false}}
+
+    {{! The main JavaScript file for Casper }}
+   
+    
+
+
+     <!--back to top start-->
+   
+    <div>
+        <a class="toTopBar go-top" title="返回顶部"></a>
+    </div>
+    <script>
+    $(document).ready(function() {
+            // 返回顶部js
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    $('.go-top').fadeIn(200);
+                } else {
+                    $('.go-top').fadeOut(200);
+                }
+            });
+            // Animate the scroll to top
+            $('.go-top').click(function(event) {
+                event.preventDefault();
+                
+                $('html, body').animate({scrollTop: 0}, 300);
+            })
+        });
+    </script>
+    <!--back to top end-->
+</body>
+</html>

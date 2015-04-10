@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}_凤凰网UED</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    
+    
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/add.css"}}" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    {{! Ghost outputs important style and meta data with this tag }}
+
+    {{#is 'post'}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/zTreeStyle.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/markdown.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/new.css"}}" />
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    {{/is}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} ">
+
+    {{navigation}}
+    <div class="site-wrapper  {{#is 'post'}}site-wrapper-index{{/is}}" >
+
+        {{! Everything else gets inserted here }}
+        <!--body begin-->
+        {{{body}}}
+        <!--body end-->
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; <a href="http://www.ghostchina.com">GhostChina</a></section>
+        </footer>
+    </div>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot jquery=false}}
+
+    {{! The main JavaScript file for Casper }}
+   
+    
+
+
+     <!--back to top start-->
+   
+    <div>
+        <a class="toTopBar go-top" title="返回顶部"></a>
+    </div>
+    <script>
+    $(document).ready(function() {
+            // 返回顶部js
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    $('.go-top').fadeIn(400);
+                } else {
+                    $('.go-top').fadeOut(400);
+                }
+            });
+            // Animate the scroll to top
+            $('.go-top').click(function(event) {
+                event.preventDefault();
+                
+                $('html, body').animate({scrollTop: 0}, 300);
+            })
+        });
+    </script>
+    
+    <!--back to top end-->
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+    <script type="text/javascript" src="{{asset "js/headroom.min.js"}}"></script>
+    <script >hljs.initHighlightingOnLoad();</script> 
+    <script type="text/javascript">
+        (function() {
+            var header = document.querySelector("#header");
+            if(window.location.hash) {
+              header.classList.add("swingOutX");
+            }
+
+            new Headroom(header, {
+                tolerance: {
+                  down : 10,
+                  up : 200
+                },
+                offset : 203,
+                classes: {
+                  initial: "animated",
+                  pinned: "swingInX",
+                  unpinned: "swingOutX"
+                },
+                onUnpin : function () {
+                    $('#tree').animate({'paddingTop':'20px'},300)
+                },
+                onPin : function (){
+                    $('#tree').animate({'paddingTop':'80px'},300)
+                }
+            }).init();
+
+        }());
+    </script> 
+    {{#is 'post'}}
+    <!--内容页需要加装的东西-->
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/ztree.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.ztree.core-3.5.js"}}"></script>
+        <script>
+            $(document).ready(function(){
+                $('#tree').ztree_toc({
+                    is_auto_number: true,
+                    // documment_selector: '.first_part'
+                });
+
+            });
+        </script>
+    {{/is}}
+</body>
+</html>
